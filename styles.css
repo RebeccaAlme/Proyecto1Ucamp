@@ -74,7 +74,78 @@ body {
         color: #DA43D8;
     }
 
-    footer {
+    .main, .secondary {
+        /* border: 1px solid white; */
         background-color: #DA43D8;
-        height: 50px;
     }
+
+    .main {
+        height: 170px ;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .secondary {
+        width: 300px;
+        /* margin: 10px 0; */
+        text-align: center;
+        padding-top: 0px;
+        /* text-decoration: underline; */
+    }
+    /* .secondarytext {
+        text-decoration: none;
+        list-style: none;
+        color: beige;
+    } */
+
+    h4{
+        color: black;
+    }
+   
+    .secondary a {
+        text-decoration: none;
+        color: black;
+        font-family: 'Segoe UI';
+    }
+    .secondary a:hover {
+        color: white;
+    }
+    @media (max-width:900px) {
+        .secondary {
+            width: 100%;
+            background-color: #DA43D8;
+        }
+    }
+
+    /* @media  (max-width:900px) {
+        .article-header-img {
+            width: 100%;
+        }
+        .articles {
+            width: 100%}
+
+    }
+
+    @media (max-width:900px) {
+        .jbtext {
+            width: 100%;
+        }} 
+        
+    @media (max-width:900px) {
+            .jbimage {
+                width: 100%;
+            }
+        } 
+    ,.jbimage {
+        display: flex;
+    }
+
+    @media (max-width:900px) {
+        .jbimage {
+            width: 100%;
+            background-color: beige;
+        }
+    } */
