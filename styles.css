@@ -18,8 +18,8 @@ body {
     float: right;
     color: #DA43D8;
     text-align: center;
-    padding: 28px 16px;
-    font-size: 16px;
+    padding: 28px 6px;
+    font-size: 14px;
     text-decoration: none;
 }
 
@@ -138,18 +138,21 @@ body {
         display: flex;
     }
 
-    @media (max-width:900px) {
+    /* @media (max-width:900px) {
         .jbimage {
             width: 100%;
             background-color: beige;
         }
-    } */
+    } */ 
 
-    /* @media (max-width:900px) {
+    @media (max-width:900px) {
         .jbtext {
             width: 100%;
             background-color: white;
-        }}  */
+            text-align: left;
+            margin: 5px;
+            padding: 5px;
+        }} 
 
         .email {
             width: 50%;
