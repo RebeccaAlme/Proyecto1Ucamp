@@ -12,19 +12,71 @@
 <body>
     <header>
         <nav class="navbar">
-            <img width="60px" height="60px" class="imgnavbar" src="./assets/imagenes/LogoNegro.jpg" alt="">
+            <img width="55px" height="55px" class="imgnavbar" src="./assets/imagenes/LogoNegro.jpg" alt="">
             <!-- <a href="./admin.html">Administrador</a> -->
             <a href="#">Home</a>
-            <a href="#">¿Quiénes somos?</a>
-            <a href="#">Cátalogo</a>
-            <a href="#">Rastrea tu pedido</a>
+            
 
         </nav>
     </header>
 
-   <section>
+   <div>
+       <div class="container">
+           <div class="row my-5">
+               <div>
+                    <h1>Pedidos</h1> 
+                    <button type="button" class="btn btn-outline-dark float-end">Agregar nuevo</button>
+                </div>
+                    <br>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Fecha de entrega</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Contacto</th>
+                            <th scope="col">Costo/Anticipo</th>
+                            <th scope="col">Acciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">23-09-22</th>
+                            <td>Ramo de rosas</td>
+                            <td>Ramo de color lila con 20 rosas en caja </td>
+                            <td>5540243954</td>
+                            <td>600/300</td>
+                            <td>
+                                <div class="btn-group me-2" role="group" aria-label="Second group">
+                                    <button type="button" class="btn btn-secondary">Editar</button>
+                                    <button type="button" class="btn btn-secondary">Borrar</button>
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    
+               
+           </div>
 
-   </section>
+       </div>
+   </div>
     
 <footer>
 
