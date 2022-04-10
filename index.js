@@ -40,7 +40,7 @@ agregar.addEventListener('click', () =>
 })
 // Definimos variable tabla para llamar de html la sección filas
 var table = document.getElementById('filas');
-function renderElement() {
+function renderElement(llave) {
 
     // table.innerHTML = 'Aquó estoy'
 // Definimos variable para guardar info de filas
@@ -51,10 +51,11 @@ function renderElement() {
       codehtml += `<td>${datos[el]}</td>`;
     }
 // Concatenamos los datos con los botones borrar y editar
+// Al boton borrar le agregamos un id dinamico
     codehtml += `<td>
     <div class="btn-group me-2" role="group" aria-label="Second group">
-        <button type="button" class="btn btn-secondary">Editar</button>
-        <button type="button" class="btn btn-secondary">Borrar</button>
+        <button id="${llave}" onClick="editar(this.id)" type="button" class="btn btn-secondary">Editar</button>
+        <button id="${llave}" onClick="eliminar(this.id)" type="button" class="btn btn-secondary borrar">Borrar</button>
       </div>
     </td>`
     codehtml += '</tr>'
@@ -62,7 +63,7 @@ function renderElement() {
     table.innerHTML += codehtml
   }
 function crear (numeroPedido,datosPedido){
-    // Buscamos el item pedido1 en la variable pedido1 que antes llenamos con el diccionario y lo guardamos en localstorage
+    // crea el item pedido1 en la variable pedido1 que antes llenamos con el diccionario y lo guardamos en localstorage
     localStorage.setItem(numeroPedido, JSON.stringify(datosPedido))
 }
 // Creamos función read
@@ -82,10 +83,47 @@ function read (){
         // la variable datos se transforma en lo que contenga el local Storage, pero el parse convierte de nuevo en diccionario un string
         datos=JSON.parse(localStorage.getItem(keys[i]));
         // Invocamos a la funcion render
-        renderElement();
+        renderElement(keys[i]);
     }
-    
+    // const borrar = document.getElementsByClassName('borrar');
+    // // console.log(borrar)
+    // for (var i = 0 ; i < borrar.length; i++) {
+    //     borrar[i].addEventListener('click' , () =>{
+
+    //         alert(JSON.stringify(this));
+    //         eliminar();
+    //     } ) ; 
+    // }  
     // datos=values;
     // renderElement();
 }
+read ();
+// Creamos un funcion eliminar, con el parametro clave 
+function eliminar (clave) {
+    // Alert con el numero de registro 
+    alert(clave)
+    // aplicamos una funcion especifica de localstorage para borrar lo que este dentro de clave 
+    localStorage.removeItem(clave);
+    // invocamos la funcion read para actualizar en pantalla los datos 
+    read();
+}
+function editar (clave){
+//  alert(clave)
+    datos=[]
+    for (let i = 0; i <= 4; i++) {
+        datos.push(prompt(arr[i]))
 
+    }
+    // Creamos diccionario para almacenar datos
+    let diccionario={
+        fecha:datos[0],
+        tipo:datos[1],
+        descripcion:datos[2],
+        contacto:datos[3],
+        costo:datos[4]
+    }
+    // Llamamos a la funcion crear para que cree el diccionario con nuevos datos del prompt 
+    crear(clave,diccionario);
+    // Llamamos a la funcion read para actualizar la pagina 
+    read();
+}
